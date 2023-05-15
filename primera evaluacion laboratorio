@@ -1,0 +1,63 @@
+#include<string.h>
+#include<stdio.h>
+int main()
+{
+	int i, j, precio[4], limite, cont=0, cantidad, cajas_armadas, cajas_armadas2;
+	char cajas[20][4];
+
+		for(i=0 ; i<4 ; i++)                                 //le pedimos al usuario ingresar el tipo de caja y el precio de la caja
+		{
+			printf("ingrese el tipo de caja: ");
+			scanf("%s", &cajas[i]);
+			printf("ingrese el precio de la caja: ");
+			scanf("%d", &precio[i]);
+		}
+    
+	
+	for(i=0 ; i<6 ; i++)
+	{
+		printf("ingrese la cantidad de alfajores que el operario %d realizo: ", i+1);    //luego le pedimos al usuario que ingrese la cantidad de alfajores que los operarios realizaron
+		scanf("%d", &cantidad);
+		
+		while(cantidad % 6==6*(cantidad%6))                              //ponemos una condicion la cual cumple la funcion de verificar si la cantidad ingresada es multiplo de 6 
+	{                                                                 //si es asi calcula la cantidad de cajas exactas de 6 unidades se pueden armar
+		cajas_armadas=cantidad/6;
+		printf("\nlas cajas que se armaron fueron %d", cajas_armadas);
+	}	
+	}
+	
+		while(cantidad % 6!=6*(cantidad%6))                           //esto hace lo contrario a la anterior condicion, verifica si la cantidad no es multiplo de 6
+	{                                                                 // si es asi, imprime error
+		limite=cantidad--;
+		cont=cont+1;
+		printf("-_-_-_-_- |ERROR| -_-_-_-_-");	
+		
+		while(limite % 6==6*(cantidad%6))
+		{
+			cajas_armadas2=limite/6;
+			printf("\nlas cajas que se armaron fueron %d", cajas_armadas2);
+		}
+	}
+	
+	printf("el total de entregas con ERROR habidas fueron %d", cont);           //este printf indica cuantas entregas con error hubo
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
